@@ -1,6 +1,7 @@
 import { createHash } from "node:crypto";
 import { BlobPreconditionFailedError, get, list, put } from "@vercel/blob";
 import type { Guide, ResearchJob } from "./domain";
+import { withWaitingPolicy } from "./waiting-policy";
 
 type RuntimeEnv = {
   OPENAI_API_KEY?: string;
@@ -95,7 +96,7 @@ export async function readGeneratedGuide(id: string): Promise<Guide | null> {
   if (record.value.schemaVersion !== "1.0" || record.value.id !== id || record.value.origin !== "generated") {
     throw new Error("Research guide storage is invalid.");
   }
-  return record.value;
+  return withWaitingPolicy(record.value);
 }
 
 export async function listGeneratedGuides(): Promise<Guide[]> {

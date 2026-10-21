@@ -1,6 +1,6 @@
 # Charter — submission brief
 
-[Live app](https://charter-oauth-guide.vercel.app) · [Project brief](https://charter-oauth-guide.vercel.app/submission) · [Source repository](https://github.com/Pal-prakash2/charter)
+[Final PDF](https://charter-oauth-guide.vercel.app/Charter-Submission.pdf) · [Live app](https://charter-oauth-guide.vercel.app) · [Project brief](https://charter-oauth-guide.vercel.app/submission) · [Source repository](https://github.com/Pal-prakash2/charter)
 
 ## Problem and opportunity
 
@@ -34,7 +34,7 @@ Curated instructions were checked against official documentation. Changes includ
 
 A real Linear request fetched three documentation pages and completed Gemini synthesis in about 44 seconds. [Saved guide](https://charter-oauth-guide.vercel.app/?guide=r_1c9eedc0-9b6f-4529-bf51-48f839f1ab45); job `job_958b2e4a-2b73-468e-a103-83e3cfcd6969`. The result is partial because some approval requirements remain unknown. Fifteen public HTTP contract checks passed, including saved-guide and job parity across REST/Markdown/MCP. Earlier billing and quota failures were recorded explicitly rather than disguised as successful research.
 
-One generated label, “None documented (editorial estimate),” still risks implying zero waiting; it must be read alongside the unknown approval gates. Reference membership and schema validation do not prove semantic correctness. A production version needs claim-level evaluations and review.
+The generated “None documented” waiting label revealed a misleading inference. A conservative policy now marks overall waiting unknown whenever a launch gate is unknown; historical views carry an explicit policy revision while stored evidence is retained. Eight focused checks and the post-correction 15/15 public suite pass. Reference membership and schema validation still do not prove semantic correctness. See [the validation record](VALIDATION.md). A later model recheck returned 503 for high demand; saved results remain available.
 
 No provider account was registered, OAuth token exchange executed, approval submitted, or developer interview conducted. Current hosted visual review is limited by unavailable browser control. The prototype has three reviewed examples, not 100 providers. Demo API records are public; credentials and private documents must not be submitted.
 
@@ -44,7 +44,8 @@ Compare time to a correct next action with developers' normal research process. 
 
 ## Submission checklist
 
-- Working app and live unfamiliar-provider synthesis: delivered.
+- Four-page submission PDF: linked above, with scenario-specific prototype and evidence links.
+- Working app and live unfamiliar-provider synthesis: delivered; provider availability can interrupt fresh research.
 - Source and short setup/decisions/limitations README: included in the repository and source archive.
 - Research, validation findings, and boundaries: this brief and linked evidence notes.
 - Repository is private: grant evaluator access before submission. No recorded walkthrough is claimed; [DEMO.md](DEMO.md) is a short demonstration script.

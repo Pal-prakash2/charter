@@ -77,3 +77,7 @@ Production extensions include exact-scope branching, change detection, refresh/r
 The primary outcome is time to a **correct, actionable next step** compared with the developer's normal research process. Supporting signals are consequential factual-error rate, ability to explain the launch path, unfamiliar-app research completion, and successful agent handoff. Guide count and generation speed are operational metrics, not the success definition.
 
 For this submission, inspect the acceptance matrix, run `tests/acceptance.mjs`, execute the demo in `docs/DEMO.md`, and review the explicit limitations in `docs/QA_REVIEW.md`. Passing automated checks does not establish that every provider claim is correct or that external OAuth flows were tested.
+
+## Evidence-preserving correction
+
+Stored generated snapshots retain their source and scenario. A historical waiting label that conflicts with unknown launch gates receives an explicitly versioned corrected representation (`.wait-policy1`) across UI, REST, Markdown, MCP and job reads. The original estimate remains in the waiting detail. New synthesis uses the same conservative rule before saving.

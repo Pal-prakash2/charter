@@ -2,7 +2,7 @@
 
 OAuth setup, approvals, and the next actionable step — for developers and their coding agents.
 
-[Live app](https://charter-oauth-guide.vercel.app) · [Project brief](https://charter-oauth-guide.vercel.app/submission) · [Saved AI example](https://charter-oauth-guide.vercel.app/?guide=r_1c9eedc0-9b6f-4529-bf51-48f839f1ab45)
+[Submission PDF](https://charter-oauth-guide.vercel.app/Charter-Submission.pdf) · [Live app](https://charter-oauth-guide.vercel.app) · [Project brief](https://charter-oauth-guide.vercel.app/submission) · [Saved AI example](https://charter-oauth-guide.vercel.app/?guide=r_1c9eedc0-9b6f-4529-bf51-48f839f1ab45)
 
 ## Try it in two minutes
 
@@ -41,8 +41,8 @@ Live Gemini synthesis successfully generated a Linear guide from three fetched d
 node tests/acceptance.mjs https://charter-oauth-guide.vercel.app --saved=r_1c9eedc0-9b6f-4529-bf51-48f839f1ab45 --job=job_958b2e4a-2b73-468e-a103-83e3cfcd6969
 ```
 
-Three reviewed examples are not 100-provider coverage. Schema and citation membership do not prove factual accuracy. No provider registration, token exchange or approval was executed; no user interviews were conducted. Review generated claims before use. Public demo APIs are not private workspaces. A generated “None documented” waiting label is not proof of zero waiting. Browser visual review of this revision is outstanding.
+Three reviewed examples are not 100-provider coverage. Schema and citation membership do not prove factual accuracy. No provider registration, token exchange or approval was executed; no user interviews were conducted. Review generated claims before use. Public demo APIs are not private workspaces. The original generated waiting label is retained for traceability; a versioned policy correction now marks overall waiting unknown when launch gates are unresolved. Browser visual review of this revision is outstanding.
 
-[Submission rationale and findings](docs/SUBMISSION.md) · [Provider evidence](docs/content-notes.md) · [QA record](docs/QA_REVIEW.md) · [Demo script](docs/DEMO.md) · [Backend](docs/BACKEND.md)
+[Submission rationale and findings](docs/SUBMISSION.md) · [Provider evidence](docs/content-notes.md) · [Validation record](docs/VALIDATION.md) · [QA record](docs/QA_REVIEW.md) · [Demo script](docs/DEMO.md) · [Backend](docs/BACKEND.md)
 
 Source: [Pal-prakash2/charter](https://github.com/Pal-prakash2/charter). The repository is private: grant evaluator access before submitting.

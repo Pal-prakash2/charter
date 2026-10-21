@@ -120,3 +120,7 @@ Hosted source retrieval for `https://developers.notion.com/docs/authorization` s
 ## Historical Charter mode review
 
 Human / Agent switching preserves the selected guide and scenario. Agent mode displays canonical Markdown and links to actual `text/markdown` routes. The switch also works from the agent-access page. A research-dialog cancellation regression was fixed and checked in the browser: changing research inputs no longer changes the current guide context. Mobile header controls fit within the viewport; long Markdown uses a contained reading panel. Copy actions report browser success, but operating-system clipboard parity was not established in the in-app browser test.
+
+## Final PDF and waiting correction — 21 October 2026
+
+Four-page PDF with scenario links, 27 clickable annotations, live-data excerpts, product decisions, trade-offs and evidence boundaries. All pages were rendered and visually inspected. The historical Linear guide now exposes a stable `.wait-policy1` correction, preserving the original estimate in detail; raw storage is unchanged. Waiting-policy checks passed 8/8 and public saved-result contracts passed 15/15 after correction. A real recheck returned Gemini 503 high demand; no false result was published. See VALIDATION.md for IDs, sources and reproduction.

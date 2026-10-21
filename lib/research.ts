@@ -2,6 +2,7 @@ import { z } from "zod";
 import { DEFAULT_CONTEXT, type Context, type Guide, type ResearchJob, type Source } from "./domain";
 import { runtimeEnv, saveJob, saveGuide, readJob, readGeneratedGuide, takeResearchQuota } from "./store";
 import { modelConfig } from "./model-config";
+import { conservativeWaiting } from "./waiting-policy";
 
 export class ServiceError extends Error {
   constructor(message: string, public status = 400) { super(message); }
@@ -194,6 +195,7 @@ async function geminiResponse(body:Record<string,unknown>,config:{token:string;b
     let status="",reason="",message="";
     try{const detail=await response.json() as {error?:{status?:string;message?:string;details?:{reason?:string}[]}};status=detail.error?.status??"";reason=detail.error?.details?.find(item=>item.reason)?.reason??"";message=(detail.error?.message??"").replaceAll(config.token,"[redacted]").replace(/AIza[A-Za-z0-9_-]{8,}/g,"[redacted]").slice(0,400);}catch{/* Never log provider bodies or key values. */}
     console.warn("Gemini request rejected",{status:response.status,type:status,reason,message});
+    if(response.status===503)throw new ServiceError("Gemini is temporarily busy. Retry shortly; existing saved guides remain available. No unvalidated guide was published.",503);
     if(response.status===429)throw new ServiceError("Gemini has no available quota or has reached a rate or billing limit. Check this key's project in Google AI Studio, including its prepaid balance and verification status, then retry.",502);
     if(response.status===401||response.status===403||reason==="API_KEY_INVALID")throw new ServiceError("Gemini denied this key's request. Check the key's API restrictions, project access, API activation, and payment-profile verification in Google AI Studio.",502);
     if(response.status===404)throw new ServiceError("The selected Gemini model is unavailable for this project. Check model access or the server's RESEARCH_MODEL setting.",502);
@@ -265,6 +267,7 @@ async function aiResearch(input:string,context:Context,update:(phase:string)=>Pr
   for (const gate of draft.gates) if(gate.status==="unknown" && !draft.unknowns.some(value=>value.includes(gate.title))) draft.unknowns.push(`Resolve the ${gate.title} gate before launch.`);
   for (const step of draft.steps) if(!step.sourceIds.length) draft.unknowns.push(`The step “${step.title}” is an editorial recommendation without supporting provider evidence.`);
   for (const estimate of [draft.effort,draft.waiting]) if(estimate.basis==="provider" && !estimate.sourceIds.length) {estimate.basis="unknown";estimate.label="Not established";}
+  draft.waiting = conservativeWaiting(draft.waiting, draft.gates);
   const stepIds = new Set(draft.steps.map(s=>s.id));
   if(stepIds.size!==draft.steps.length || draft.steps.some(s=>s.dependsOn.some(id=>!stepIds.has(id)||id===s.id))) throw new ServiceError("Research produced invalid step dependencies. No guide was saved.",422);
   // Reject cycles before publishing an executable agent plan.
