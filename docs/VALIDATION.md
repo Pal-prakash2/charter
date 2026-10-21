@@ -22,7 +22,7 @@ The public Linear app-registration URL was fetched without credentials. It retur
 - Waiting-policy suite: **8 checks passed**, covering missing evidence, stage estimates, unchanged supported estimates, idempotence, input immutability, no invented gates, versioned historical correction and unchanged editorial records.
 - TypeScript and Vercel production builds passed.
 - A later real research attempt fetched three sources, then Gemini returned **503 UNAVAILABLE** for high demand. Failed job `job_d3289729-45e4-4a0f-b074-865b021399e6` persisted; no generated guide was invented. Earlier billing/quota failures are historical and separate from this service failure.
-- PDF: four rendered pages inspected; embedded text and link annotations checked. Guide excerpts are reconstructed from actual public API data and labelled accordingly; they are not browser screenshots.
+- PDF: three rendered pages inspected; embedded text and link annotations checked. The submission uses plain text, numbered headings and standard hyperlinks; no screenshots are included.
 
 Reproduce without a model call:
 

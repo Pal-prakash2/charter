@@ -44,7 +44,7 @@ Compare time to a correct next action with developers' normal research process. 
 
 ## Submission checklist
 
-- Four-page submission PDF: linked above, with scenario-specific prototype and evidence links.
+- Three-page submission PDF: linked above, with scenario-specific prototype and evidence links.
 - Working app and live unfamiliar-provider synthesis: delivered; provider availability can interrupt fresh research.
 - Source and short setup/decisions/limitations README: included in the repository and source archive.
 - Research, validation findings, and boundaries: this brief and linked evidence notes.

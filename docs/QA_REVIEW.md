@@ -124,3 +124,7 @@ Human / Agent switching preserves the selected guide and scenario. Agent mode di
 ## Final PDF and waiting correction — 21 October 2026
 
 Four-page PDF with scenario links, 27 clickable annotations, live-data excerpts, product decisions, trade-offs and evidence boundaries. All pages were rendered and visually inspected. The historical Linear guide now exposes a stable `.wait-policy1` correction, preserving the original estimate in detail; raw storage is unchanged. Waiting-policy checks passed 8/8 and public saved-result contracts passed 15/15 after correction. A real recheck returned Gemini 503 high demand; no false result was published. See VALIDATION.md for IDs, sources and reproduction.
+
+## Plain-document PDF revision — 21 October 2026
+
+At the user’s request, the designed four-page PDF was replaced by a conventional three-page document: white pages, Arial body text, numbered headings, simple paragraphs and standard links. The core reasoning, prototype walkthrough, validation and limitations remain. All three pages were rendered and inspected. No application behavior changed.
