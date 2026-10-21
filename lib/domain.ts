@@ -1,0 +1,11 @@
+export type Audience = "internal" | "pilot" | "external";
+export type Capability = "read" | "write";
+export type Context = { audience: Audience; capability: Capability; stage: "exploring" | "testing" | "launching" };
+export const DEFAULT_CONTEXT: Context = { audience: "external", capability: "read", stage: "exploring" };
+export type Source = { id: string; title: string; url: string; checkedAt: string; kind: "official" | "practical" };
+export type Estimate = { label: string; basis: "provider" | "editorial" | "unknown"; detail: string; sourceIds: string[] };
+export type Step = { id: string; title: string; detail: string; actor: "developer" | "agent" | "admin" | "provider"; completion: string; dependsOn: string[]; sourceIds: string[]; url?: string; phase: "prepare" | "build" | "review" | "launch" };
+export type Gate = { id: string; title: string; status: "required" | "conditional" | "not_required" | "unknown"; reason: string; sourceIds: string[] };
+export type Blocker = { title: string; symptom: string; resolution: string; actor: string; sourceIds: string[] };
+export type Guide = { schemaVersion: "1.0"; id: string; providerId: string; name: string; subtitle: string; description: string; category: string; color: string; initials: string; context: Context; version: string; checkedAt: string; origin: "reviewed" | "generated"; researchStatus: "complete" | "partial"; summary: string; difficulty: "Straightforward" | "Review involved" | "External dependencies" | "Needs investigation"; effort: Estimate; waiting: Estimate; prerequisites: string[]; gates: Gate[]; steps: Step[]; blockers: Blocker[]; sources: Source[]; unknowns: string[]; nextAction: string; agentBrief?: string };
+export type ResearchJob = { id: string; status: "queued" | "researching" | "complete" | "partial" | "failed"; phase: string; createdAt: string; updatedAt: string; input: string; context: Context; guideId?: string; error?: string; events: { label: string; at: string }[] };

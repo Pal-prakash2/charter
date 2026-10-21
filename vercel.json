@@ -1,0 +1,12 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "functions": {
+    "app/api/research/route.ts": {
+      "maxDuration": 300
+    },
+    "app/mcp/route.ts": {
+      "maxDuration": 300
+    }
+  }
+}
